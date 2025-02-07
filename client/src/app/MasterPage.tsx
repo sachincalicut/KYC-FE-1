@@ -26,13 +26,15 @@ const MasterLayout = ({ children }: { children: React.ReactNode }) => {
     >
       <Sidebar />
       <div
-        className={`wrapper flex flex-col w-full h-full py-7 px-9 bg-white-50 ${
+        className={`wrapper flex flex-col w-full h-full py-4 px-9 bg-white-50 ${
           isSidebarCollapsed ? "md:pl-24" : "md:pl-72"
         }`}
       >
         <Navbar />
         <div>{children}</div>
       </div>
+    
+     
     </div>
   );
 };
