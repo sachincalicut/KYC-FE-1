@@ -111,7 +111,12 @@ table > thead:hover,
 table > thead{
   background-color: #edf3f8;
 }
-
+a,
+select,
+input,
 button{
+  outline: none;
+}
+input:focus{
   outline: none;
 }
