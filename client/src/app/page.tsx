@@ -1,7 +1,11 @@
+import React from 'react'
+import Dashboard from "@/app/(components)/dashboard/page"
+const Home = () => {
+  return (
+    <div>
+      <Dashboard />
+    </div>
+  )
+}
 
-import Dashboard from "@/app/Dashboard/page";
-export default function Home() {
-  return(
-    <Dashboard />
-  );
-  }
+export default Home;
