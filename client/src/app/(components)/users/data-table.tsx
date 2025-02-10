@@ -118,7 +118,7 @@ export function DataTable<TData, TValue>({
             <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
-              Select Type <ChevronDown />
+              Sort By<ChevronDown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
