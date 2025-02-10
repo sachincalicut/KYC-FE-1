@@ -9,7 +9,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: "Competition Monitoring",
 
 };
 

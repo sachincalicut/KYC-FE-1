@@ -21,9 +21,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 // You can use a Zod schema here if you want.
 export type Payment = {
   id: string
-  amount: number
-  status: "pending" | "processing" | "success" | "failed"
-  email: string
+  Uline_name: string
+  PackagingPrice_name: string
+  Uline_price: number
+  PackagingPrice_price: number
+  Price_Gap:number
+  
 }
 
 export const columns: ColumnDef<Payment>[] = [
@@ -49,32 +52,71 @@ export const columns: ColumnDef<Payment>[] = [
     enableSorting: false,
     enableHiding: false,
   },
+ 
   {
-    accessorKey: "status",
-    header: "Status",
-  },
-  {
-    accessorKey: "email",
+    accessorKey: "Uline_name",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Email
+          Uline name
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     },
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
+    accessorKey: "PackagingPrice_name",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Packaging Price name
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+  },
+  {
+    accessorKey: "Uline_price",
+    header: () => <div className="text-right">Uline Price</div>,
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"))
-      const formatted = new Intl.NumberFormat("en-IN", {
+      const amount = parseFloat(row.getValue("Uline_price"))
+      const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
-        currency: "INR",
+        currency: "USD",
+      }).format(amount)
+ 
+      return <div className="text-right font-medium">{formatted}</div>
+    },
+
+  },
+  {
+    accessorKey: "PackagingPrice_price",
+    header: () => <div className="text-right">Packaging Price price</div>,
+    cell: ({ row }) => {
+      const amount = parseFloat(row.getValue("PackagingPrice_price"))
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(amount)
+ 
+      return <div className="text-right font-medium">{formatted}</div>
+    },
+
+  },
+  {
+    accessorKey: "Price_Gap",
+    header: () => <div className="text-right">Price Gap</div>,
+    cell: ({ row }) => {
+      const amount = parseFloat(row.getValue("Price_Gap"))
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
       }).format(amount)
  
       return <div className="text-right font-medium">{formatted}</div>

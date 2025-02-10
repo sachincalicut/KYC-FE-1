@@ -74,7 +74,7 @@ body {
 .bg-parallax-image {
   position: relative;
   overflow: hidden;
-  height: 350px;
+  height: 250px;
 }
 
 .bg-parallax-image img {
@@ -104,4 +104,9 @@ body {
 }
 .height-780{
   height:780px;
+}
+table > thead:focus,
+table > thead:hover,
+table > thead{
+  background-color: #edf3f8;
 }
