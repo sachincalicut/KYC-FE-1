@@ -125,3 +125,8 @@ input:focus{
   line-height: 1.25rem;
   color: #605d5d;
 }
+input::placeholder,
+input::-ms-input-placeholder,
+input::-webkit-input-placeholder{
+  font-size: 12px !important;
+}
