@@ -120,3 +120,8 @@ button{
 input:focus{
   outline: none;
 }
+.text-sm {
+  font-size: 12px !important;
+  line-height: 1.25rem;
+  color: #605d5d;
+}
