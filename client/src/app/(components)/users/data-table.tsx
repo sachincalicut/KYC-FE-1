@@ -107,7 +107,7 @@ export function DataTable<TData, TValue>({
               className="max-w-sm"
             />
           </div>
-          <div className="col-span-1 float-right justify-end">
+          <div className="col-span-1 float-right justify-end text-right">
             <Button
               variant="outline"
               size="sm"
